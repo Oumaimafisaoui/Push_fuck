@@ -6,7 +6,7 @@
 /*   By: oufisaou <oufisaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:15:03 by oufisaou          #+#    #+#             */
-/*   Updated: 2022/03/31 00:15:06 by oufisaou         ###   ########.fr       */
+/*   Updated: 2022/03/31 02:52:19 by oufisaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,13 @@ static int	words_num(char const *s, char c)
 	return (counter);
 }
 
-static char	**ft_freed(char **sentence, int n)
+void	ft_free_array(char **sentence, int n)
 {
+	if (sentence == NULL)
+		return ;
 	while (n--)
 		free(sentence[n]);
-	free(*sentence);
-	return (NULL);
+	free(sentence);
 }
 
 static char	*char_alloc(char const *s, char c)
@@ -73,7 +74,7 @@ char	**ft_split(char const *s, char c)
 					s++;
 				sentence[i] = char_alloc(s, c);
 				if (!sentence[i])
-					ft_freed(sentence, i);
+					ft_free_array(sentence, i);
 				s = s + ft_strlen(sentence[i]);
 			}
 			sentence[i] = 0;
@@ -82,6 +83,7 @@ char	**ft_split(char const *s, char c)
 	}
 	return (NULL);
 }
+
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	index;

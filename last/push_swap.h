@@ -6,7 +6,7 @@
 /*   By: oufisaou <oufisaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 02:01:52 by oufisaou          #+#    #+#             */
-/*   Updated: 2022/03/31 00:16:13 by oufisaou         ###   ########.fr       */
+/*   Updated: 2022/03/31 02:52:36 by oufisaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ typedef struct s_stack
 }	t_stack;
 
 size_t	ft_strlen(const char *str);
-int count_line(char **tmp);
-int len_stack_a(int args, char **argv);
+void	ft_free_array(char **sentence, int n);
+int		count_line(char **tmp);
+int		len_stack_a(int args, char **argv);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 void	ft_putstr_fd(char *str, int fd);
