@@ -1,4 +1,3 @@
-# Push_fuck
+# Push_Swap
 
-<h1> Everything bad i did in my life, had leaded me to this project..</h1>
-<h2>__Drama Queen__</h2>
+<h1>This projects is a program that sorts elements in areversed stack A, using the stack B. Without bypassing an exact number of instructions or using other than the limited moves cited on the subject.</h1>
